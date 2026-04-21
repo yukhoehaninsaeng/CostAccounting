@@ -1,0 +1,78 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PGPASSWORD=\"${DB_PASSWORD:-vacaproject}\" psql:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ssh:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm collector:dev:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(pnpm add:*)",
+      "Bash(PGPASSWORD=vacaproject psql:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(cat:*)",
+      "Bash(while read f)",
+      "Bash(do rm \"$f\")",
+      "Bash(echo:*)",
+      "Bash(done:*)",
+      "Bash(find:*)",
+      "Bash(PGPASSWORD=\"$DB_PASSWORD:-vacaproject\" psql:*)",
+      "Bash(pnpm build:*)",
+      "Bash(gh run list:*)",
+      "Bash(curl:*)",
+      "Bash(mkdir:*)",
+      "Bash(__NEW_LINE__ jq '[.[] | .userIdx]' merged_unique_bj_list.json)",
+      "Bash(bj_useridx_list.json)",
+      "Bash(__NEW_LINE__ echo \"✅ Created bj_useridx_list.json\")",
+      "Bash(while read:*)",
+      "Bash(do echo 'Processing $file...' jq . $file mv temp.json $file done)",
+      "Bash(psql:*)",
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(python3:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit(*.ts)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx eslint --rule '{\"@typescript-eslint/no-explicit-any\": \"error\"}' $file"
+          },
+          {
+            "type": "command",
+            "command": "cd $(git -C $(dirname $file) rev-parse --show-toplevel 2>/dev/null || dirname $file) && npx eslint --fix $file 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -subtitle '질문' -message 'Claude가 질문이 있습니다'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -subtitle '작업 완료' -message '요청하신 작업이 완료되었습니다'"
+          }
+        ]
+      }
+    ]
+  }
+}
