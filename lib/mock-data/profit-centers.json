@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pc-001",
+    "profit_center_code": "PC1000",
+    "profit_center_name": "디지털솔루션본부",
+    "company_id": "co-001",
+    "manager": "김철수",
+    "is_active": true
+  },
+  {
+    "id": "pc-002",
+    "profit_center_code": "PC2000",
+    "profit_center_name": "클라우드인프라본부",
+    "company_id": "co-001",
+    "manager": "이영희",
+    "is_active": true
+  },
+  {
+    "id": "pc-003",
+    "profit_center_code": "PC3000",
+    "profit_center_name": "AI·데이터본부",
+    "company_id": "co-001",
+    "manager": "박민준",
+    "is_active": true
+  },
+  {
+    "id": "pc-004",
+    "profit_center_code": "PC4000",
+    "profit_center_name": "보안솔루션본부",
+    "company_id": "co-001",
+    "manager": "최지원",
+    "is_active": true
+  },
+  {
+    "id": "pc-005",
+    "profit_center_code": "PC5000",
+    "profit_center_name": "경영지원본부",
+    "company_id": "co-001",
+    "manager": "정수진",
+    "is_active": true
+  }
+]
