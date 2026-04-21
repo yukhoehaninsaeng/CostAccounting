@@ -1,6 +1,6 @@
 {
-  "name": "cost-accounting",
-  "version": "0.1.0",
+  "name": "bjc-cost-management",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
+    "clsx": "^2.1.0",
+    "class-variance-authority": "^0.7.0",
+    "lucide-react": "^0.363.0",
     "next": "14.1.0",
+    "nuqs": "^2.0.4",
     "react": "^18",
     "react-dom": "^18",
     "recharts": "^2.10.3",
-    "zustand": "^4.5.0"
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",

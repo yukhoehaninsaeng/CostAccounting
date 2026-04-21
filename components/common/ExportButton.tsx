@@ -1,5 +1,7 @@
 'use client'
 
+import { Download } from 'lucide-react'
+
 interface ExportButtonProps {
   data: Record<string, unknown>[]
   filename?: string
@@ -36,9 +38,9 @@ export default function ExportButton({ data, filename = 'export' }: ExportButton
   return (
     <button
       onClick={handleExport}
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
     >
-      <span>⬇</span>
+      <Download size={13} />
       CSV 내보내기
     </button>
   )
