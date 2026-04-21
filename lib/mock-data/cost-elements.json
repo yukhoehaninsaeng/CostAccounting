@@ -1,0 +1,14 @@
+[
+  { "id": "ce-001", "element_code": "CE4001", "element_name": "인건비", "element_category": "LABOR", "is_active": true },
+  { "id": "ce-002", "element_code": "CE4002", "element_name": "퇴직급여", "element_category": "LABOR", "is_active": true },
+  { "id": "ce-003", "element_code": "CE4003", "element_name": "복리후생비", "element_category": "LABOR", "is_active": true },
+  { "id": "ce-004", "element_code": "CE5001", "element_name": "외주용역비", "element_category": "MATERIAL", "is_active": true },
+  { "id": "ce-005", "element_code": "CE5002", "element_name": "소프트웨어 구입비", "element_category": "MATERIAL", "is_active": true },
+  { "id": "ce-006", "element_code": "CE5003", "element_name": "하드웨어 구입비", "element_category": "MATERIAL", "is_active": true },
+  { "id": "ce-007", "element_code": "CE6001", "element_name": "임차료", "element_category": "OVERHEAD", "is_active": true },
+  { "id": "ce-008", "element_code": "CE6002", "element_name": "통신비", "element_category": "OVERHEAD", "is_active": true },
+  { "id": "ce-009", "element_code": "CE6003", "element_name": "교육훈련비", "element_category": "OVERHEAD", "is_active": true },
+  { "id": "ce-010", "element_code": "CE6004", "element_name": "출장여비", "element_category": "OVERHEAD", "is_active": true },
+  { "id": "ce-011", "element_code": "CE7001", "element_name": "감가상각비(IT)", "element_category": "DEPRECIATION", "is_active": true },
+  { "id": "ce-012", "element_code": "CE7002", "element_name": "감가상각비(설비)", "element_category": "DEPRECIATION", "is_active": true }
+]

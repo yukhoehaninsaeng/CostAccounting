@@ -1,0 +1,19 @@
+[
+  { "id": "cc-001", "cost_center_code": "CC1100", "cost_center_name": "디지털솔루션개발팀", "profit_center_id": "pc-001", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-002", "cost_center_code": "CC1200", "cost_center_name": "디지털솔루션구축팀", "profit_center_id": "pc-001", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-003", "cost_center_code": "CC1300", "cost_center_name": "디지털솔루션PM팀", "profit_center_id": "pc-001", "cost_center_type": "INDIRECT", "is_active": true },
+  { "id": "cc-004", "cost_center_code": "CC1400", "cost_center_name": "디지털솔루션QA팀", "profit_center_id": "pc-001", "cost_center_type": "INDIRECT", "is_active": true },
+  { "id": "cc-005", "cost_center_code": "CC2100", "cost_center_name": "클라우드아키텍처팀", "profit_center_id": "pc-002", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-006", "cost_center_code": "CC2200", "cost_center_name": "클라우드운영팀", "profit_center_id": "pc-002", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-007", "cost_center_code": "CC2300", "cost_center_name": "클라우드보안팀", "profit_center_id": "pc-002", "cost_center_type": "INDIRECT", "is_active": true },
+  { "id": "cc-008", "cost_center_code": "CC3100", "cost_center_name": "AI연구팀", "profit_center_id": "pc-003", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-009", "cost_center_code": "CC3200", "cost_center_name": "데이터엔지니어링팀", "profit_center_id": "pc-003", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-010", "cost_center_code": "CC3300", "cost_center_name": "MLOps팀", "profit_center_id": "pc-003", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-011", "cost_center_code": "CC4100", "cost_center_name": "보안컨설팅팀", "profit_center_id": "pc-004", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-012", "cost_center_code": "CC4200", "cost_center_name": "보안솔루션개발팀", "profit_center_id": "pc-004", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-013", "cost_center_code": "CC4300", "cost_center_name": "침해대응팀", "profit_center_id": "pc-004", "cost_center_type": "DIRECT", "is_active": true },
+  { "id": "cc-014", "cost_center_code": "CC5100", "cost_center_name": "경영기획팀", "profit_center_id": "pc-005", "cost_center_type": "ADMIN", "is_active": true },
+  { "id": "cc-015", "cost_center_code": "CC5200", "cost_center_name": "재무회계팀", "profit_center_id": "pc-005", "cost_center_type": "ADMIN", "is_active": true },
+  { "id": "cc-016", "cost_center_code": "CC5300", "cost_center_name": "인사총무팀", "profit_center_id": "pc-005", "cost_center_type": "ADMIN", "is_active": true },
+  { "id": "cc-017", "cost_center_code": "CC5400", "cost_center_name": "IT인프라팀", "profit_center_id": "pc-005", "cost_center_type": "INDIRECT", "is_active": true }
+]
