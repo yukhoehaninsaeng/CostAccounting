@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useQueryState, parseAsInteger, parseAsString } from 'nuqs'
+import { useSearchParams } from 'next/navigation'
 import Header from '@/components/layout/Header'
 import KpiCard from '@/components/common/KpiCard'
 import StockTable from '@/components/inventory/StockTable'
@@ -16,17 +16,21 @@ const TABS: { key: MaterialType; label: string }[] = [
 ]
 
 export default function InventoryContent() {
-  const [year] = useQueryState('year', parseAsInteger.withDefault(2025))
-  const [period] = useQueryState('period', parseAsInteger.withDefault(12))
-  const [model] = useQueryState('model', parseAsString.withDefault('all'))
+  const searchParams = useSearchParams()
+  // URL이 single source of truth — 조회 버튼 클릭 시 URL이 업데이트되고 이 값들이 변경됨
+  const year = searchParams.get('year') ?? '2025'
+  const period = searchParams.get('period') ?? '12'
+  const model = searchParams.get('model') ?? 'all'
+
   const [activeTab, setActiveTab] = useState<MaterialType>('FERT')
   const [items, setItems] = useState<StockItem[]>([])
   const [summary, setSummary] = useState<StockSummary | null>(null)
   const [loading, setLoading] = useState(true)
 
+  // URL 파라미터 또는 탭이 바뀔 때 데이터 재조회 (API 엔드포인트 — 외부 시스템)
   useEffect(() => {
     setLoading(true)
-    const params = new URLSearchParams({ year: String(year), period: String(period), model, type: activeTab })
+    const params = new URLSearchParams({ year, period, model, type: activeTab })
     fetch(`/api/inventory?${params}`)
       .then((r) => r.json())
       .then((data) => {
@@ -36,7 +40,7 @@ export default function InventoryContent() {
   }, [year, period, model, activeTab])
 
   useEffect(() => {
-    const allParams = new URLSearchParams({ year: String(year), period: String(period), model })
+    const allParams = new URLSearchParams({ year, period, model })
     Promise.all([
       fetch(`/api/inventory?${allParams}&type=FERT`).then((r) => r.json()),
       fetch(`/api/inventory?${allParams}&type=HALB`).then((r) => r.json()),
@@ -47,7 +51,7 @@ export default function InventoryContent() {
         fert_closing_amt: fert.reduce((s: number, r: StockItem) => s + r.closing_amt, 0),
         fert_avg_price: Math.round(
           fert.reduce((s: number, r: StockItem) => s + r.closing_amt, 0) /
-          Math.max(1, fert.reduce((s: number, r: StockItem) => s + r.closing_qty, 0))
+            Math.max(1, fert.reduce((s: number, r: StockItem) => s + r.closing_qty, 0))
         ),
         halb_closing_qty: halb.reduce((s: number, r: StockItem) => s + r.closing_qty, 0),
         halb_closing_amt: halb.reduce((s: number, r: StockItem) => s + r.closing_amt, 0),

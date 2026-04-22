@@ -1,29 +1,31 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useQueryState, parseAsString } from 'nuqs'
 import { ChevronDown, ChevronRight, Check, Building2 } from 'lucide-react'
 import { COMPANIES, COMPANY_LIST } from '@/lib/companies'
+import { useFilter } from '@/lib/filter-context'
 
-type SelectionType = 'ALL' | 'CO' | 'PLANT'
+type SelectionType = 'ALL' | 'CO'
 
 interface Selection {
   type: SelectionType
   bukrs: string | null
-  plant: string | null
 }
 
 export default function CompanySelector() {
-  const [bukrs, setBukrs] = useQueryState('bukrs', parseAsString.withDefault('all'))
+  const { pending, setPending } = useFilter()
+  const bukrs = pending.bukrs
+
   const [open, setOpen] = useState(false)
   const [expanded, setExpanded] = useState<string | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
 
-  // Derive selection from URL param
-  const sel: Selection = bukrs === 'all'
-    ? { type: 'ALL', bukrs: null, plant: null }
-    : { type: 'CO', bukrs, plant: bukrs } // 1 plant per company → same code
+  const sel: Selection =
+    bukrs === 'all'
+      ? { type: 'ALL', bukrs: null }
+      : { type: 'CO', bukrs }
 
+  // 외부 클릭 시 패널 닫기 (DOM 접근 — 합법적 useEffect)
   useEffect(() => {
     function onOutsideClick(e: MouseEvent) {
       if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
@@ -35,12 +37,12 @@ export default function CompanySelector() {
   }, [])
 
   function selectAll() {
-    setBukrs('all')
+    setPending('bukrs', 'all')
     setOpen(false)
   }
 
   function selectCompany(code: string) {
-    setBukrs(code)
+    setPending('bukrs', code)
     setExpanded(code)
   }
 
@@ -132,7 +134,10 @@ export default function CompanySelector() {
                     onClick={(e) => toggleExpand(company.bukrs, e)}
                     className="ml-1 text-slate-300 hover:text-slate-500"
                   >
-                    <ChevronRight size={13} className={`transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
+                    <ChevronRight
+                      size={13}
+                      className={`transition-transform ${isExpanded ? 'rotate-90' : ''}`}
+                    />
                   </button>
                 </div>
 
@@ -140,14 +145,19 @@ export default function CompanySelector() {
                 {isExpanded && (
                   <div
                     className="flex items-center gap-2.5 pl-8 pr-4 py-2 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors"
-                    onClick={() => { selectCompany(company.bukrs); setOpen(false) }}
+                    onClick={() => {
+                      selectCompany(company.bukrs)
+                      setOpen(false)
+                    }}
                   >
                     <span
                       className="w-2 h-2 rounded-full flex-shrink-0"
                       style={{ background: company.color }}
                     />
                     <span className="font-mono text-xs text-slate-500 w-10">{company.plant}</span>
-                    <span className="text-xs text-slate-600 flex-1">플랜트 {company.plant} — {company.name} 생산</span>
+                    <span className="text-xs text-slate-600 flex-1">
+                      플랜트 {company.plant} — {company.name} 생산
+                    </span>
                     {isSelected && <Check size={11} className="text-slate-500" />}
                   </div>
                 )}
@@ -168,7 +178,9 @@ export default function CompanySelector() {
                 >
                   {co.bukrs}
                 </span>
-                <span>{co.name} · 플랜트 {co.plant}</span>
+                <span>
+                  {co.name} · 플랜트 {co.plant}
+                </span>
               </>
             ) : null}
           </div>

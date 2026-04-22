@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { LayoutDashboard, Package, Factory, GitBranch, Radio } from 'lucide-react'
 import { cn } from '@/lib/utils/format'
 
@@ -17,6 +17,13 @@ const LAST_SYNC = '2025-12-31 23:58'
 
 export default function Sidebar() {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  // 현재 필터 파라미터를 각 메뉴 링크에 포함시켜 메뉴 이동 시에도 필터 유지
+  function navHref(base: string) {
+    const params = searchParams.toString()
+    return params ? `${base}?${params}` : base
+  }
 
   return (
     <aside className="w-60 min-h-screen bg-[#0c1e3c] text-white flex flex-col flex-shrink-0">
@@ -39,7 +46,7 @@ export default function Sidebar() {
             return (
               <li key={href}>
                 <Link
-                  href={href}
+                  href={navHref(href)}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors relative',
                     active
