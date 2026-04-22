@@ -1,0 +1,122 @@
+[
+  {
+    "matnr": "F01ED00001A",
+    "product_name": "Assy ston s Refresh",
+    "model_group": "STON-S",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 9800,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F01ED00002A",
+    "product_name": "Assy ston s Device",
+    "model_group": "STON-S",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 11200,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F01ED00003A",
+    "product_name": "Assy ston s Unit Body",
+    "model_group": "STON-S",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 8500,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F01ED00004A",
+    "product_name": "Assy ston s Cart B/D",
+    "model_group": "STON-S",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 9200,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00001A",
+    "product_name": "Assy ston+(cart) Refresh",
+    "model_group": "STON-CART",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 12400,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00002A",
+    "product_name": "Assy ston+(cart) Device",
+    "model_group": "STON-CART",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 13800,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00003A",
+    "product_name": "Assy ston+(cart) Unit",
+    "model_group": "STON-CART",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 11600,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00004A",
+    "product_name": "Assy ston+(cart) Plus",
+    "model_group": "STON-CART",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 14500,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00005A",
+    "product_name": "Assy ston+ Device Refresh",
+    "model_group": "STON-PLUS",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 14800,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00006A",
+    "product_name": "Assy ston+ Device",
+    "model_group": "STON-PLUS",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 13500,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00007A",
+    "product_name": "Assy ston+ Unit Body",
+    "model_group": "STON-PLUS",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 12800,
+    "currency": "KRW",
+    "unit": "EA"
+  },
+  {
+    "matnr": "F02ED00008A",
+    "product_name": "Assy ston+ Cart B/D",
+    "model_group": "STON-PLUS",
+    "material_type": "FERT",
+    "plant": "4000",
+    "std_price": 15000,
+    "currency": "KRW",
+    "unit": "EA"
+  }
+]
