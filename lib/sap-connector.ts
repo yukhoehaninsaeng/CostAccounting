@@ -160,6 +160,7 @@ export class MockSapConnector implements SapConnector {
     return results
   }
 
+
   async getBom({ matnr }: BomParams): Promise<BomNode[]> {
     const data = await this.loadJson<BomNode[]>('bom')
     // Return nodes related to the given FERT matnr
