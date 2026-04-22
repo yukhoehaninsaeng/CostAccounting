@@ -10,13 +10,14 @@ export const dynamic = 'force-dynamic'
 export default async function ProductionPage({
   searchParams,
 }: {
-  searchParams: { year?: string; period?: string; model?: string; plant?: string }
+  searchParams: { year?: string; period?: string; model?: string; plant?: string; bukrs?: string }
 }) {
   const params = {
     year: Number(searchParams.year ?? 2025),
     period: Number(searchParams.period ?? 12),
     model: searchParams.model ?? 'all',
-    plant: searchParams.plant ?? '4000',
+    plant: searchParams.plant ?? 'all',
+    bukrs: searchParams.bukrs ?? 'all',
   }
 
   const [items, summary] = await Promise.all([

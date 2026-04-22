@@ -9,7 +9,8 @@ export interface GlobalFilter {
   year: number
   period: number   // 1~12, 0 = 누계
   model: string    // 'all' | 'ston-s' | 'ston-cart' | 'ston-plus'
-  plant: string    // '4000'
+  bukrs: string    // 'all' | '1000' | '3000' | '4000'
+  plant: string    // 'all' | '1000' | '3000' | '4000'
 }
 
 // ─── 제품 마스터 ──────────────────────────────────────────────
@@ -74,6 +75,7 @@ export interface ProductionItem {
   matnr: string
   product_name: string
   model_group: string
+  bukrs?: string   // 회사코드 (1000 / 3000 / 4000)
   // 실적
   actual_qty: number
   actual_amount: number
@@ -124,6 +126,18 @@ export interface BomSummary {
   material_rate: number
   std_price: number
   bom_item_count: number
+}
+
+// ─── 회사별 요약 ─────────────────────────────────────────────
+export interface CompanySummary {
+  bukrs: string
+  prod_amt: number
+  mat_cost: number
+  mat_rate: number
+  stock_amt: number
+  prod_qty: number
+  plan_qty: number
+  plan_amt: number
 }
 
 // ─── 대시보드 ─────────────────────────────────────────────────

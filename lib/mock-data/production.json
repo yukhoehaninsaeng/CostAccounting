@@ -1,5 +1,153 @@
 [
   {
+    "bukrs": "1000",
+    "matnr": "F05AA00001A",
+    "product_name": "제품 A Refresh",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "1000",
+    "actual_qty": 30000,
+    "actual_amount": 150000000,
+    "actual_mat_cost": 64200000,
+    "actual_mat_rate": 42.8,
+    "plan_qty": 34000,
+    "plan_amount": 170000000,
+    "plan_mat_cost": 68000000,
+    "plan_mat_rate": 40.0,
+    "qty_variance": -4000,
+    "amt_variance": -20000000,
+    "mat_rate_variance": 2.8,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "1000",
+    "matnr": "F05AA00002A",
+    "product_name": "제품 A Regain",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "1000",
+    "actual_qty": 26000,
+    "actual_amount": 130000000,
+    "actual_mat_cost": 49920000,
+    "actual_mat_rate": 38.4,
+    "plan_qty": 30000,
+    "plan_amount": 150000000,
+    "plan_mat_cost": 57000000,
+    "plan_mat_rate": 38.0,
+    "qty_variance": -4000,
+    "amt_variance": -20000000,
+    "mat_rate_variance": 0.4,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "1000",
+    "matnr": "F05AB00001A",
+    "product_name": "제품 B",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "1000",
+    "actual_qty": 22000,
+    "actual_amount": 120000000,
+    "actual_mat_cost": 44640000,
+    "actual_mat_rate": 37.2,
+    "plan_qty": 25000,
+    "plan_amount": 136250000,
+    "plan_mat_cost": 50000000,
+    "plan_mat_rate": 36.7,
+    "qty_variance": -3000,
+    "amt_variance": -16250000,
+    "mat_rate_variance": 0.5,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "1000",
+    "matnr": "F05AC00001A",
+    "product_name": "제품 C Standard",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "1000",
+    "actual_qty": 20000,
+    "actual_amount": 120000000,
+    "actual_mat_cost": 39480000,
+    "actual_mat_rate": 32.9,
+    "plan_qty": 23000,
+    "plan_amount": 138000000,
+    "plan_mat_cost": 44160000,
+    "plan_mat_rate": 32.0,
+    "qty_variance": -3000,
+    "amt_variance": -18000000,
+    "mat_rate_variance": 0.9,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "3000",
+    "matnr": "F03BB00001A",
+    "product_name": "제품 B VN-RF",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "3000",
+    "actual_qty": 15000,
+    "actual_amount": 110000000,
+    "actual_mat_cost": 43560000,
+    "actual_mat_rate": 39.6,
+    "plan_qty": 17000,
+    "plan_amount": 124750000,
+    "plan_mat_cost": 48452500,
+    "plan_mat_rate": 38.8,
+    "qty_variance": -2000,
+    "amt_variance": -14750000,
+    "mat_rate_variance": 0.8,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "3000",
+    "matnr": "F03BB00002A",
+    "product_name": "제품 B VN-RG",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "3000",
+    "actual_qty": 12000,
+    "actual_amount": 90000000,
+    "actual_mat_cost": 36720000,
+    "actual_mat_rate": 40.8,
+    "plan_qty": 14000,
+    "plan_amount": 105000000,
+    "plan_mat_cost": 41685000,
+    "plan_mat_rate": 39.7,
+    "qty_variance": -2000,
+    "amt_variance": -15000000,
+    "mat_rate_variance": 1.1,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "3000",
+    "matnr": "F03BC00001A",
+    "product_name": "제품 C VN",
+    "model_group": "STON-S",
+    "fiscal_year": 2025,
+    "fiscal_period": 12,
+    "plant": "3000",
+    "actual_qty": 10000,
+    "actual_amount": 80000000,
+    "actual_mat_cost": 31920000,
+    "actual_mat_rate": 39.9,
+    "plan_qty": 12000,
+    "plan_amount": 96000000,
+    "plan_mat_cost": 37920000,
+    "plan_mat_rate": 39.5,
+    "qty_variance": -2000,
+    "amt_variance": -16000000,
+    "mat_rate_variance": 0.4,
+    "data_source": "MOCK"
+  },
+  {
+    "bukrs": "4000",
     "matnr": "F01ED00001A",
     "product_name": "Assy ston s Refresh",
     "model_group": "STON-S",
@@ -20,6 +168,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F01ED00002A",
     "product_name": "Assy ston s Device",
     "model_group": "STON-S",
@@ -40,6 +189,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F01ED00003A",
     "product_name": "Assy ston s Unit Body",
     "model_group": "STON-S",
@@ -60,6 +210,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F01ED00004A",
     "product_name": "Assy ston s Cart B/D",
     "model_group": "STON-S",
@@ -80,6 +231,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00001A",
     "product_name": "Assy ston+(cart) Refresh",
     "model_group": "STON-CART",
@@ -100,6 +252,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00002A",
     "product_name": "Assy ston+(cart) Device",
     "model_group": "STON-CART",
@@ -120,6 +273,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00003A",
     "product_name": "Assy ston+(cart) Unit",
     "model_group": "STON-CART",
@@ -140,6 +294,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00004A",
     "product_name": "Assy ston+(cart) Plus",
     "model_group": "STON-CART",
@@ -160,6 +315,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00005A",
     "product_name": "Assy ston+ Device Refresh",
     "model_group": "STON-PLUS",
@@ -180,6 +336,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00006A",
     "product_name": "Assy ston+ Device",
     "model_group": "STON-PLUS",
@@ -200,6 +357,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00007A",
     "product_name": "Assy ston+ Unit Body",
     "model_group": "STON-PLUS",
@@ -220,6 +378,7 @@
     "data_source": "MOCK"
   },
   {
+    "bukrs": "4000",
     "matnr": "F02ED00008A",
     "product_name": "Assy ston+ Cart B/D",
     "model_group": "STON-PLUS",

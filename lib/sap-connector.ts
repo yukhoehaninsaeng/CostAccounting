@@ -5,6 +5,7 @@ import type {
   ProductionSummary,
   BomNode,
   BomSummary,
+  CompanySummary,
   DashboardKpi,
   ChartDataItem,
   InventoryComposition,
@@ -12,6 +13,7 @@ import type {
   SyncLog,
   MaterialType,
 } from '@/types'
+import { COMPANY_LIST } from '@/lib/companies'
 
 // ─── 인터페이스 ───────────────────────────────────────────────
 export interface SapConnector {
@@ -19,6 +21,7 @@ export interface SapConnector {
   getInventorySummary(params: BaseParams): Promise<StockSummary>
   getProduction(params: ProductionParams): Promise<ProductionItem[]>
   getProductionSummary(params: BaseParams): Promise<ProductionSummary>
+  getCompanySummaries(params: BaseParams): Promise<CompanySummary[]>
   getBom(params: BomParams): Promise<BomNode[]>
   getBomSummary(plant: string): Promise<BomSummary[]>
   getDashboardKpi(params: BaseParams): Promise<DashboardKpi>
@@ -33,6 +36,7 @@ export interface BaseParams {
   year: number
   period: number
   plant?: string
+  bukrs?: string   // 회사코드: 'all' | '1000' | '3000' | '4000'
   model?: string
 }
 
@@ -110,9 +114,10 @@ export class MockSapConnector implements SapConnector {
     }
   }
 
-  async getProduction({ model, matnr }: ProductionParams): Promise<ProductionItem[]> {
+  async getProduction({ model, bukrs, matnr }: ProductionParams): Promise<ProductionItem[]> {
     const data = await this.loadJson<ProductionItem[]>('production')
     let result = this.filterByModel(data, model) as ProductionItem[]
+    if (bukrs && bukrs !== 'all') result = result.filter((r) => r.bukrs === bukrs)
     if (matnr) result = result.filter((r) => r.matnr === matnr)
     return result
   }
@@ -133,6 +138,26 @@ export class MockSapConnector implements SapConnector {
       mat_rate: actual_amt > 0 ? (mat_cost / actual_amt) * 100 : 0,
       achievement_rate: plan_qty > 0 ? (actual_qty / plan_qty) * 100 : 0,
     }
+  }
+
+  async getCompanySummaries(params: BaseParams): Promise<CompanySummary[]> {
+    const results: CompanySummary[] = []
+    for (const co of COMPANY_LIST) {
+      const items = await this.getProduction({ ...params, bukrs: co.bukrs })
+      const actual_amt = items.reduce((s, r) => s + r.actual_amount, 0)
+      const mat_cost = items.reduce((s, r) => s + r.actual_mat_cost, 0)
+      results.push({
+        bukrs: co.bukrs,
+        prod_amt: actual_amt,
+        mat_cost,
+        mat_rate: actual_amt > 0 ? (mat_cost / actual_amt) * 100 : 0,
+        stock_amt: 0,
+        prod_qty: items.reduce((s, r) => s + r.actual_qty, 0),
+        plan_qty: items.reduce((s, r) => s + r.plan_qty, 0),
+        plan_amt: items.reduce((s, r) => s + r.plan_amount, 0),
+      })
+    }
+    return results
   }
 
   async getBom({ matnr }: BomParams): Promise<BomNode[]> {
